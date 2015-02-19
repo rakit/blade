@@ -21,7 +21,7 @@ class RakitProvider implements ServiceProviderInterface {
 	public function boot(App $app)
 	{
 		$app->singleton('blade', function($app) {
-			$view_paths = $app->config['view.paths'];
+			$view_paths = [ $app->config['view.path'] ];
 			$view_cache_path = $app->config['view.cache_path'];
 
 			$blade = new Blade($view_paths, $view_cache_path);

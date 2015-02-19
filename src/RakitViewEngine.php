@@ -6,6 +6,8 @@
  * This class is only for rakit framework
  */
 
+namespace Rakit\Blade;
+
 use Rakit\Framework\App;
 use Rakit\Framework\Services\View\ViewEngine;
 
