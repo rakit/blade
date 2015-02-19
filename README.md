@@ -12,8 +12,8 @@ require('vendor/autoload.php');
 
 use Rakit\Blade\Blade;
 
-$view_paths = [ __DIR__. ' /views' ];
-$view_cache_path = __DIR__ . '/cache/views';
+$view_paths = [ __DIR__.' /views' ];
+$view_cache_path = __DIR__.'/cache/views';
 
 $blade = new Blade($view_paths, $view_cache_path);
 

@@ -51,7 +51,7 @@ class Blade extends Factory {
     /**
      * Shortcut for getting BladeCompiler
      *
-     * @return CompilerEngine
+     * @return Illuminate\View\Compilers\BladeCompiler
      */
     public function getCompiler()
     {
