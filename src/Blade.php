@@ -29,11 +29,11 @@ class Blade extends Factory {
         $resolver->register("blade", function() use ($view_cache_path) {
       		if ( ! is_dir($view_cache_path)) {
 	        	mkdir($view_cache_path, 0777, true);
-	    	}
+            }
 
-	        $blade = new BladeCompiler(new Filesystem, $view_cache_path);
-	        return new CompilerEngine($blade);
-	    });
+            $blade = new BladeCompiler(new Filesystem, $view_cache_path);
+            return new CompilerEngine($blade);
+        });
 
         parent::__construct($resolver, $finder, $dispatcher);
     }
