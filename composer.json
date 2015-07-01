@@ -9,8 +9,8 @@
     ],
     "license": "MIT",
     "require": {
-        "illuminate/view": "~5.0",
-        "illuminate/events": "~5.0"
+        "illuminate/view": "5.1.*",
+        "illuminate/events": "5.1.*"
     },
     "autoload": {
         "psr-4": {
