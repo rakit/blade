@@ -9,9 +9,9 @@
 namespace Rakit\Blade;
 
 use Rakit\Framework\App;
-use Rakit\Framework\Services\View\ViewEngine;
+use Rakit\Framework\View\ViewEngineInterface;
 
-class RakitViewEngine extends ViewEngine {
+class RakitViewEngine implements ViewEngineInterface {
 
 	protected $app;
 
@@ -29,7 +29,6 @@ class RakitViewEngine extends ViewEngine {
 	 */
 	public function render($file, array $data = [])
 	{
-		$data['app'] = $this->app;
 		return $this->app->blade->render($file, $data);
 	}
 

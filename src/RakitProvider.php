@@ -9,41 +9,36 @@
 namespace Rakit\Blade;
 
 use Rakit\Framework\App;
-use Rakit\Framework\ServiceProviderInterface;
+use Rakit\Framework\Provider;
 
-class RakitProvider implements ServiceProviderInterface {
+class RakitProvider extends Provider {
 
 	/**
 	 * Register blade instance on application booting
-	 *
-	 * @param Rakit\Framework\App $app
 	 */
-	public function boot(App $app)
+	public function register()
 	{
-		$app->singleton('blade', function($app) {
+		$app = $this->app;
+		$app['blade'] = $app->container->singleton(function($container) use ($app) {
 			$view_paths = [ $app->config['view.path'] ];
 			$view_cache_path = $app->config['view.cache_path'];
 
 			$blade = new Blade($view_paths, $view_cache_path);
 			return $blade;
 		});
-		
+
 		$app->config['view.engine'] = new RakitViewEngine($app);
 	}
 
 	/**
-	 * Add some macro when application run
-	 *
-	 * @param Rakit\Framework\App $app
+	 * Register view macro on application booting
 	 */
-	public function run(App $app)
+	public function boot()
 	{
-		$app->macro('view', function($file, array $data = []) use ($app) {
-			return $app->blade->render($file, $data);
-		});
+		$app = $this->app;
 
-		$app->macro('render', function($file, array $data = []) use ($app) {
-			echo $app->view($file, $data);
+		$app->macro('blade', function($file, array $data = []) use ($app) {
+			return $app->blade->render($file, $data);
 		});
 	}
 
