@@ -1,6 +1,6 @@
 {
     "name": "rakit/blade",
-    "description": "Laravel Blade Template Engine",
+    "description": "Blade template engine outside laravel",
     "authors": [
         {
             "name": "Muhammad Syifa",
