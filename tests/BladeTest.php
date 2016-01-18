@@ -32,15 +32,14 @@ class BladeTest extends PHPUnit_Framework_TestCase {
 
 	public function testExtendCompiler()
 	{
-		$this->blade->extend(function($view, $compiler) {
-			$pattern = $compiler->createMatcher('uppercase');
-		    return preg_replace($pattern, '$1<?php echo strtoupper($2); ?>', $view);
+		$this->blade->directive('uppercase', function($exp) {
+			return "<?php echo strtoupper({$exp});?>";
 		});
 
 		$rendered = $this->blade->render('uppercase', ['message' => 'foobar']);
 		$expected_result = 'FOOBAR';
 
-		$this->assertTrue(trim($rendered) == $expected_result);
+		$this->assertEquals(trim($rendered), $expected_result);
 	}
 
 	/**

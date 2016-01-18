@@ -39,13 +39,14 @@ class Blade extends Factory {
     }
 
     /**
-     * Shortcut for extending compiler
+     * Shortcut for extending directive
      *
+     * @param String $directive
      * @param Closure $compiler
      */
-    public function extend(Closure $compiler)
+    public function directive($directive, Closure $compiler)
     {
-    	$this->getCompiler()->extend($compiler);
+    	return $this->getCompiler()->directive($directive, $compiler);
     }
 
     /**
