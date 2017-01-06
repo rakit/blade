@@ -9,8 +9,9 @@
     ],
     "license": "MIT",
     "require": {
-        "illuminate/view": "5.1.*",
-        "illuminate/events": "5.1.*"
+        "php": ">=5.5.9",
+        "illuminate/view": "5.2.*",
+        "illuminate/events": "5.2.*"
     },
     "require-dev": {
         "phpunit/phpunit": "4.*"    
