@@ -1,5 +1,8 @@
 Rakit Blade
-----------------
+--------------
+
+[![Build Status](https://img.shields.io/travis/rakit/blade.svg?style=flat-square)](https://travis-ci.org/rakit/blade)
+[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://doge.mit-license.org)
 
 Blade Template Engine outside Laravel Framework.
 
