@@ -1,3 +1,4 @@
 vendor/
-tests/src/
+tests/caches/*
+!tests/caches/.gitkeep
 composer.lock
